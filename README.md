@@ -1,6 +1,8 @@
 # AI-Powered Urban Air Quality Intelligence Platform
 ### ET AI Hackathon 2026 — Problem Statement #5
 
+![Architecture](architecture_diagram.png)
+
 An AI platform that moves cities from **reactive monitoring** to **proactive, evidence-based intervention** — not just measuring air quality, but predicting it and explaining why it's bad.
 
 ## What it does
