@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Air Quality Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0A0E14;
+    --surface: #131826;
+    --surface-2: #1C2333;
+    --border: #232B3D;
+    --text: #E8EDF2;
+    --text-dim: #8B96AB;
+    --text-faint: #4F5A70;
+    --good: #00D9A3;
+    --moderate: #FFC857;
+    --poor: #FF8A4C;
+    --severe: #FF4757;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    padding: 32px 40px 60px;
+    background-image:
+      radial-gradient(circle at 15% 0%, rgba(0,217,163,0.06) 0%, transparent 35%),
+      radial-gradient(circle at 90% 10%, rgba(255,71,87,0.04) 0%, transparent 30%);
+  }
+  .wrap { max-width: 1280px; margin: 0 auto; }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .brand-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--good);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .live-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--good);
+    box-shadow: 0 0 8px var(--good);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 32px; font-weight: 600; letter-spacing: -0.01em;
+  }
+  .subtitle { color: var(--text-dim); font-size: 14px; margin-top: 6px; max-width: 520px; }
+  .meta-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-faint); text-align: right; line-height: 1.6;
+  }
+  .status-strip {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1.1fr;
+    gap: 16px; margin-bottom: 28px;
+  }
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px; padding: 22px 24px;
+  }
+  .stat-card.hero {
+    background: linear-gradient(135deg, var(--surface) 0%, rgba(0,217,163,0.05) 100%);
+  }
+  .stat-label {
+    font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--text-dim);
+    font-weight: 500; margin-bottom: 10px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .severity-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+  .stat-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 42px; font-weight: 700; line-height: 1;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  .stat-value .unit { font-size: 14px; font-weight: 500; color: var(--text-dim); font-family: 'Inter',sans-serif; }
+  .stat-category {
+    margin-top: 10px; font-size: 13px; font-weight: 600;
+    display: inline-block; padding: 4px 10px; border-radius: 6px;
+  }
+  .stat-sub { margin-top: 10px; font-size: 12.5px; color: var(--text-dim); }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1.65fr 1fr;
+    gap: 20px;
+  }
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px; padding: 26px 28px;
+  }
+  .panel-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px; font-weight: 600; margin-bottom: 4px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .scope-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px; font-weight: 500; letter-spacing: 0.06em;
+    color: var(--text-dim); background: var(--surface-2);
+    border: 1px solid var(--border); padding: 3px 8px; border-radius: 5px;
+  }
+  .panel-desc { font-size: 12.5px; color: var(--text-dim); margin-bottom: 22px; }
+  #chart-svg { width: 100%; height: 280px; overflow: visible; }
+  .axis-label { font-family: 'JetBrains Mono',monospace; font-size: 10px; fill: var(--text-faint); }
+  .grid-line { stroke: var(--border); stroke-width: 1; }
+  .legend-row { display: flex; gap: 22px; margin-top: 18px; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--text-dim); }
+  .legend-swatch { width: 14px; height: 3px; border-radius: 2px; }
+  .legend-swatch.dot { width: 7px; height: 7px; border-radius: 50%; }
+  .zone-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 13px 0; border-bottom: 1px solid var(--border);
+  }
+  .zone-item:last-child { border-bottom: none; }
+  .zone-name { font-size: 13.5px; font-weight: 500; }
+  .zone-type { font-size: 11px; color: var(--text-faint); margin-top: 2px; }
+  .zone-bar-wrap {
+    width: 90px; height: 6px; background: var(--surface-2);
+    border-radius: 3px; overflow: hidden; margin-top: 6px;
+  }
+  .zone-bar { height: 100%; border-radius: 3px; }
+  .zone-aqi { font-family: 'JetBrains Mono',monospace; font-size: 15px; font-weight: 500; text-align: right; }
+  .zone-diff { font-size: 11px; text-align: right; margin-top: 3px; }
+  .zone-toggle { margin-top: 14px; text-align: center; }
+  .zone-toggle-btn {
+    background: var(--surface-2); border: 1px solid var(--border);
+    color: var(--text-dim); font-family: 'Inter',sans-serif;
+    font-size: 12px; font-weight: 500; padding: 8px 16px;
+    border-radius: 8px; cursor: pointer;
+  }
+  .zone-toggle-btn:hover { color: var(--text); border-color: var(--good); }
+  .advisory {
+    margin-top: 20px;
+    background: linear-gradient(135deg, rgba(255,138,76,0.1), rgba(255,71,87,0.06));
+    border: 1px solid rgba(255,138,76,0.25);
+    border-radius: 16px; padding: 20px 26px;
+    display: flex; align-items: center; gap: 18px;
+  }
+  .advisory-icon {
+    font-size: 22px; flex-shrink: 0;
+    width: 42px; height: 42px;
+    background: rgba(255,138,76,0.15); border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .advisory-text { font-size: 13.5px; line-height: 1.5; color: var(--text); flex: 1; }
+  .advisory-text b { color: var(--poor); }
+  .advisory-header-row {
+    display: flex; justify-content: space-between;
+    align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 8px;
+  }
+  .lang-switcher { display: flex; gap: 6px; flex-wrap: wrap; }
+  .lang-btn {
+    background: var(--surface-2); border: 1px solid var(--border);
+    color: var(--text-dim); font-family: 'Inter',sans-serif;
+    font-size: 11.5px; font-weight: 500; padding: 5px 11px;
+    border-radius: 7px; cursor: pointer;
+  }
+  .lang-btn:hover { color: var(--text); }
+  .lang-btn.active {
+    background: rgba(255,138,76,0.18); border-color: var(--poor);
+    color: var(--poor); font-weight: 600;
+  }
+  .advisory-msg { font-size: 14px; margin-bottom: 6px; }
+  .advisory-footnote {
+    font-size: 11px; color: var(--text-faint);
+    font-family: 'JetBrains Mono',monospace;
+  }
+  footer {
+    margin-top: 28px; text-align: center;
+    font-family: 'JetBrains Mono',monospace;
+    font-size: 10.5px; color: var(--text-faint); letter-spacing: 0.04em;
+  }
+  .date-lookup {
+    margin-top: 24px; padding: 20px;
+    background: var(--surface-2); border: 1px solid var(--border);
+    border-radius: 14px;
+  }
+  .date-lookup-label {
+    font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--text-dim);
+    font-weight: 500; margin-bottom: 14px;
+  }
+  .date-lookup-controls {
+    display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px;
+  }
+  .date-lookup-controls select {
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--text); font-family: 'JetBrains Mono',monospace;
+    font-size: 12.5px; padding: 9px 12px; border-radius: 8px;
+    outline: none; cursor: pointer; flex: 1; min-width: 130px;
+  }
+  .date-lookup-controls select:focus { border-color: var(--good); }
+  .date-result-card {
+    display: flex; align-items: center; gap: 16px;
+    padding: 14px 16px; background: var(--surface);
+    border-radius: 10px; border: 1px solid var(--border);
+  }
+  .date-result-card .big-num {
+    font-family: 'Space Grotesk',sans-serif;
+    font-size: 30px; font-weight: 700; line-height: 1;
+  }
+  .date-result-card .cat-pill {
+    font-family: 'Inter',sans-serif; font-size: 11.5px;
+    font-weight: 600; padding: 4px 10px; border-radius: 6px; white-space: nowrap;
+  }
+  .date-result-meta { flex: 1; font-size: 12px; color: var(--text-dim); line-height: 1.6; }
+  .date-result-meta b { color: var(--text); }
+  .result-type-badge {
+    display: inline-block; font-family: 'JetBrains Mono',monospace;
+    font-size: 9.5px; font-weight: 600; letter-spacing: 0.04em;
+    padding: 2px 7px; border-radius: 4px; margin-bottom: 5px;
+  }
+  .forecast-badge { background: rgba(0,217,163,0.15); color: var(--good); }
+  .historical-badge { background: rgba(255,200,87,0.15); color: var(--moderate); }
+  .vs-bar-mini {
+    width: 100%; height: 5px; background: var(--surface-2);
+    border-radius: 3px; margin-top: 6px; overflow: hidden; position: relative;
+  }
+  .vs-bar-mini .fill { height: 100%; border-radius: 3px; }
+  .vs-bar-mini .marker { position: absolute; top: -2px; width: 2px; height: 9px; background: var(--text); }
+  .vs-bar-caption {
+    display: flex; justify-content: space-between;
+    font-size: 10px; color: var(--text-faint); margin-top: 4px;
+    font-family: 'JetBrains Mono',monospace;
+  }
+  @media (max-width: 900px) {
+    .status-strip { grid-template-columns: 1fr 1fr; }
+    .main-grid { grid-template-columns: 1fr; }
+    body { padding: 20px; }
+  }
+  .city-switcher {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  .city-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .city-btn:hover { color: var(--text); border-color: var(--good); }
+  .city-btn.active {
+    background: rgba(0,217,163,0.12);
+    border-color: var(--good);
+    color: var(--good);
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <div class="brand-eyebrow"><span class="live-dot"></span> <span id="city-label">DELHI</span> · LIVE MONITORING</div>
+      <h1>Air Quality Intelligence</h1>
+      <p class="subtitle">Forecasting and source attribution for proactive intervention — not just measurement.</p>
+    </div>
+    <div class="meta-tag">MODEL: PROPHET (TIME-SERIES)<br>DATA: CPCB 2015–2020<br>ACCURACY: 55.8% vs. BASELINE</div>
+  </header>
+
+  <div class="city-switcher" id="city-switcher">
+    <button class="city-btn active" data-city="Delhi">🏙 Delhi</button>
+    <button class="city-btn" data-city="Bengaluru">🌆 Bengaluru</button>
+  </div>
+
+  <div class="status-strip" id="status-strip"></div>
+
+  <div class="main-grid">
+    <div class="panel">
+      <div class="panel-title">90-Day History &amp; 30-Day Forecast <span class="scope-tag">CITY-WIDE</span></div>
+      <div class="panel-desc">Predicted <span id="chart-city-name">Delhi</span> AQI with confidence range, generated from 5+ years of historical training data. This chart does not change when you select a zone below.</div>
+      <svg id="chart-svg" viewBox="0 0 760 280" preserveAspectRatio="none"></svg>
+      <div class="legend-row">
+        <div class="legend-item"><span class="legend-swatch dot" style="background:var(--text-faint)"></span> Historical AQI</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:var(--good)"></span> Predicted AQI</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:rgba(0,217,163,0.18)"></span> Confidence range</div>
+      </div>
+      <div class="date-lookup">
+        <div class="date-lookup-label">🔍 LOOK UP A SPECIFIC AREA OR DATE (independent of chart above)</div>
+        <div class="date-lookup-controls">
+          <select id="area-select">
+            <option value="__city__">📍 ${CURRENT_CITY} (city-wide forecast)</option>
+          </select>
+          <select id="date-select"></select>
+        </div>
+        <div id="date-result-area"></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Zone Attribution</div>
+      <div class="panel-desc">Average AQI by monitored zone, ranked highest to lowest.</div>
+      <div id="zone-list"></div>
+      <div id="zone-toggle" class="zone-toggle"></div>
+    </div>
+  </div>
+
+  <div class="advisory" id="advisory-banner"></div>
+
+  <footer>BUILT FOR ET AI HACKATHON 2026 — PROOF OF CONCEPT, DELHI · ARCHITECTURE DESIGNED TO SCALE TO ADDITIONAL CITIES</footer>
+</div>
+
+<script>
+const STATION_NAMES = {
+  'DL001':'Alipur','DL002':'Anand Vihar','DL004':'Aya Nagar',
+  'DL005':'Bawana','DL006':'Burari Crossing','DL007':'CRRI Mathura Road',
+  'DL008':'DTU','DL009':'Dr. Karni Singh Range','DL010':'Dwarka Sector 8',
+  'DL011':'East Arjun Nagar','DL012':'IGI Airport T3','DL013':'IHBAS Dilshad Garden',
+  'DL014':'ITO','DL015':'Jahangirpuri','DL016':'JLN Stadium',
+  'DL017':'Lodhi Road','DL018':'Major Dhyan Chand Stadium','DL019':'Mandir Marg',
+  'DL020':'Mundka','DL021':'NSIT Dwarka','DL022':'Najafgarh',
+  'DL023':'Narela','DL024':'Nehru Nagar','DL025':'North Campus DU',
+  'DL026':'Okhla Phase-2','DL027':'Patparganj','DL028':'Punjabi Bagh',
+  'DL029':'Pusa DPCC','DL030':'Pusa IMD','DL031':'R K Puram',
+  'DL032':'Rohini','DL033':'Shadipur','DL034':'Sirifort',
+  'DL035':'Sonia Vihar','DL036':'Sri Aurobindo Marg','DL037':'Vivek Vihar',
+  'DL038':'Wazirpur',
+  // Bengaluru stations
+  'KA002':'BTM Layout','KA003':'BWSSB Kadabesanahalli','KA004':'Bapuji Nagar',
+  'KA005':'City Railway Station','KA006':'Hebbal','KA007':'Hombegowda Nagar',
+  'KA008':'Jayanagar 5th Block','KA009':'Peenya','KA010':'Sanegurava Halli',
+  'KA011':'Silk Board'
+};
+
+const LANG_LABELS = { en:"English", hi:"हिन्दी", ta:"தமிழ்", kn:"ಕನ್ನಡ", pa:"ਪੰਜਾਬੀ" };
+
+function aqiColor(val) {
+  if (val <= 50) return "#00D9A3";
+  if (val <= 100) return "#7ED957";
+  if (val <= 200) return "#FFC857";
+  if (val <= 300) return "#FF8A4C";
+  if (val <= 400) return "#FF4757";
+  return "#C2185B";
+}
+
+function aqiCategoryColor(cat) {
+  const map = {"Good":"#00D9A3","Satisfactory":"#7ED957","Moderate":"#FFC857","Poor":"#FF8A4C","Very Poor":"#FF4757","Severe":"#C2185B"};
+  return map[cat] || "#8B96AB";
+}
+
+function aqiCategory(val) {
+  if (val <= 50) return "Good";
+  if (val <= 100) return "Satisfactory";
+  if (val <= 200) return "Moderate";
+  if (val <= 300) return "Poor";
+  if (val <= 400) return "Very Poor";
+  return "Severe";
+}
+
+function formatDateLabel(dateStr) {
+  if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
+    const d = new Date(dateStr);
+    return d.toLocaleDateString('en-IN', {day:'numeric', month:'short', year:'numeric'});
+  }
+  return dateStr;
+}
+
+function render(data) {
+  renderStatusStrip(data);
+  renderChart(data);
+  renderDateLookup(data);
+  renderZones(data);
+  renderAdvisory(data);
+}
+
+function renderStatusStrip(data) {
+  const zones = Object.values(data.zones || {}).filter(z => z && z.average_aqi);
+  const worstZone = zones.sort((a,b) => b.average_aqi - a.average_aqi)[0] || {};
+  const curColor = aqiCategoryColor(data.current_category);
+  const tomColor = aqiCategoryColor(data.tomorrow_category);
+  const delta = data.tomorrow_aqi - data.current_aqi;
+  const trend = delta < 0 ? `↓ ${Math.abs(delta).toFixed(0)} improving` : `↑ ${delta.toFixed(0)} worsening`;
+  const trendColor = delta < 0 ? "var(--good)" : "var(--poor)";
+
+  document.getElementById('status-strip').innerHTML = `
+    <div class="stat-card hero">
+      <div class="stat-label"><span class="severity-dot" style="background:${curColor};box-shadow:0 0 10px ${curColor}"></span>CURRENT AQI · ${data.city ? data.city.toUpperCase() : 'DELHI'}</div>
+      <div class="stat-value">${data.current_aqi.toFixed(0)}<span class="unit">AQI</span></div>
+      <div class="stat-category" style="background:${curColor}22;color:${curColor}">${data.current_category}</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label"><span class="severity-dot" style="background:${tomColor}"></span>FORECAST · TOMORROW</div>
+      <div class="stat-value">${data.tomorrow_aqi.toFixed(0)}<span class="unit">AQI</span></div>
+      <div class="stat-sub" style="color:${trendColor}">${trend}</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">MODEL CONFIDENCE</div>
+      <div class="stat-value">${data.city === 'Bengaluru' ? '11.9' : '55.8'}<span class="unit">% better</span></div>
+      <div class="stat-sub">vs. naive baseline (winter test)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label"><span class="severity-dot" style="background:${aqiColor(worstZone.average_aqi||0)}"></span>HIGHEST-RISK ZONE</div>
+      <div class="stat-value" style="font-size:24px">${STATION_NAMES[worstZone.station_id] || worstZone.station_id || '—'}</div>
+      <div class="stat-sub">${worstZone.zone_type||''} · AQI ${(worstZone.average_aqi||0).toFixed(0)}</div>
+    </div>
+  `;
+}
+
+function renderChart(data) {
+  const svg = document.getElementById('chart-svg');
+  const W = 760, H = 280, padL = 36, padR = 10, padT = 10, padB = 24;
+  const MIN_AQI = 29;
+  const allVals = [
+    ...data.history.map(d => d.aqi),
+    ...data.forecast.map(d => Math.max(d.upper, MIN_AQI))
+  ];
+  const maxV = Math.max(...allVals) * 1.08;
+  const totalPoints = data.history.length + data.forecast.length;
+  const xStep = (W - padL - padR) / (totalPoints - 1);
+  const minV = 29;
+  const yScale = v => H - padB - ((Math.max(v, minV) - minV) / (maxV - minV)) * (H - padT - padB);
+  const xScale = i => padL + i * xStep;
+
+  let svgContent = '';
+  for (let g = 0; g <= 4; g++) {
+    const val = (maxV / 4) * g;
+    const y = yScale(val);
+    svgContent += `<line x1="${padL}" y1="${y}" x2="${W-padR}" y2="${y}" class="grid-line"/>`;
+    svgContent += `<text x="2" y="${y+3}" class="axis-label">${Math.round(val)}</text>`;
+  }
+
+  data.history.forEach((d, i) => {
+    svgContent += `<circle cx="${xScale(i)}" cy="${yScale(d.aqi)}" r="1.6" fill="#4F5A70" opacity="0.7"/>`;
+  });
+
+  let upperPath = '', lowerPath = '';
+  data.forecast.forEach((d, i) => {
+    const upper = Math.max(d.upper, MIN_AQI);
+    const lower = Math.max(d.lower, MIN_AQI);
+    const x = xScale(data.history.length + i);
+    upperPath += `${i===0?'M':'L'}${x},${yScale(upper)} `;
+    if (i === data.forecast.length - 1) {
+      for (let j = data.forecast.length - 1; j >= 0; j--) {
+        const lx = xScale(data.history.length + j);
+        lowerPath += `L${lx},${yScale(Math.max(data.forecast[j].lower, MIN_AQI))} `;
+      }
+    }
+  });
+  svgContent += `<path d="${upperPath} ${lowerPath} Z" fill="#00D9A3" opacity="0.12"/>`;
+
+  let linePath = '';
+  data.forecast.forEach((d, i) => {
+    const x = xScale(data.history.length + i);
+    const aqi = Math.max(d.aqi, MIN_AQI);
+    linePath += `${i===0?'M':'L'}${x},${yScale(aqi)} `;
+  });
+  svgContent += `<path d="${linePath}" fill="none" stroke="#00D9A3" stroke-width="2.5" stroke-linecap="round"/>`;
+
+  const transY = yScale(Math.max(data.forecast[0].aqi, MIN_AQI));
+  const transX = xScale(data.history.length);
+  svgContent += `<circle cx="${transX}" cy="${transY}" r="4" fill="#00D9A3"><animate attributeName="r" values="4;7;4" dur="2s" repeatCount="indefinite"/></circle>`;
+
+  svg.innerHTML = svgContent;
+}
+
+function renderDateLookup(data) {
+  const areaSelect = document.getElementById('area-select');
+  const dateSelect = document.getElementById('date-select');
+  const resultArea = document.getElementById('date-result-area');
+
+  // clear previous zone options (keep first "city-wide" option only)
+  areaSelect.options[0].textContent = `📍 ${CURRENT_CITY} (city-wide forecast)`;
+  while (areaSelect.options.length > 1) areaSelect.remove(1);
+
+  const zones = Object.values(data.zones || {}).filter(z => z && z.zone_type && z.station_id);
+  zones.sort((a,b) => a.zone_type.localeCompare(b.zone_type)).forEach(z => {
+    const opt = document.createElement('option');
+    opt.value = z.station_id;
+    opt.textContent = `📌 ${STATION_NAMES[z.station_id] || z.station_id} — ${z.zone_type}`;
+    areaSelect.appendChild(opt);
+  });
+
+  function populateDates() {
+    dateSelect.innerHTML = '';
+    if (areaSelect.value === '__city__') {
+      data.forecast.forEach((d, i) => {
+        const opt = document.createElement('option');
+        opt.value = i;
+        opt.textContent = formatDateLabel(d.date);
+        dateSelect.appendChild(opt);
+      });
+    } else {
+      const opt = document.createElement('option');
+      opt.value = '0';
+      opt.textContent = 'Historical average (all monitored days)';
+      dateSelect.appendChild(opt);
+    }
+  }
+
+  function showResult() {
+    if (areaSelect.value === '__city__') {
+      const idx = parseInt(dateSelect.value) || 0;
+      const d = data.forecast[idx];
+      if (!d) return;
+      const color = aqiColor(d.aqi);
+      const cat = aqiCategory(d.aqi);
+      resultArea.innerHTML = `
+        <div class="date-result-card">
+          <div>
+            <div class="big-num" style="color:${color}">${d.aqi.toFixed(0)}</div>
+            <div class="cat-pill" style="background:${color}22;color:${color};margin-top:6px">${cat}</div>
+          </div>
+          <div class="date-result-meta">
+            <span class="result-type-badge forecast-badge">⚡ FORECAST</span><br>
+            <b>${CURRENT_CITY}, city-wide</b> — predicted for ${formatDateLabel(d.date)}.<br>
+            Confidence range: ${Math.max(d.lower,0).toFixed(0)}–${d.upper.toFixed(0)} AQI.
+          </div>
+        </div>`;
+    } else {
+      const z = data.zones[areaSelect.value];
+      if (!z) return;
+      const color = aqiColor(z.average_aqi);
+      const cat = aqiCategory(z.average_aqi);
+      const diff = ((z.average_aqi - z.city_average_aqi) / z.city_average_aqi) * 100;
+      const diffColor = diff > 5 ? "var(--poor)" : diff < -5 ? "var(--good)" : "var(--text-dim)";
+      const barPct = Math.min(100, (z.average_aqi / (z.city_average_aqi * 1.8)) * 100);
+      const markerPct = Math.min(100, (z.city_average_aqi / (z.city_average_aqi * 1.8)) * 100);
+      resultArea.innerHTML = `
+        <div class="date-result-card">
+          <div>
+            <div class="big-num" style="color:${color}">${z.average_aqi.toFixed(0)}</div>
+            <div class="cat-pill" style="background:${color}22;color:${color};margin-top:6px">${cat}</div>
+          </div>
+          <div class="date-result-meta">
+            <span class="result-type-badge historical-badge">📊 HISTORICAL AVERAGE (not a forecast)</span><br>
+            <b>${STATION_NAMES[z.station_id] || z.station_id}</b> (${z.zone_type} zone) — avg AQI ${z.average_aqi.toFixed(0)}
+            vs. all-zones avg ${z.city_average_aqi.toFixed(0)}.
+            <span style="color:${diffColor}"> ${diff > 0 ? '+' : ''}${diff.toFixed(0)}%</span>
+            <div class="vs-bar-mini">
+              <div class="fill" style="width:${barPct}%;background:${color}"></div>
+              <div class="marker" style="left:${markerPct}%"></div>
+            </div>
+            <div class="vs-bar-caption"><span>0</span><span>▲ all-zones avg (${z.city_average_aqi.toFixed(0)})</span></div>
+          </div>
+        </div>`;
+    }
+  }
+
+  areaSelect.onchange = () => { populateDates(); showResult(); };
+  dateSelect.onchange = showResult;
+  populateDates();
+  showResult();
+}
+
+function renderZones(data) {
+  const zones = Object.values(data.zones || {}).filter(z => z && z.average_aqi && z.zone_type);
+  if (zones.length === 0) {
+    document.getElementById('zone-list').innerHTML = '<p style="color:var(--text-faint);font-size:13px">No zone data available.</p>';
+    return;
+  }
+  const sorted = zones.sort((a,b) => b.average_aqi - a.average_aqi);
+  const maxAqi = sorted[0].average_aqi;
+  const COLLAPSED = 5;
+  let expanded = false;
+
+  function zoneRowHTML(z) {
+    const diff = ((z.average_aqi - z.city_average_aqi) / z.city_average_aqi) * 100;
+    const diffColor = diff > 5 ? "var(--poor)" : diff < -5 ? "var(--good)" : "var(--text-dim)";
+    const diffText = diff > 0 ? `+${diff.toFixed(0)}%` : `${diff.toFixed(0)}%`;
+    const barColor = aqiColor(z.average_aqi);
+    const barWidth = (z.average_aqi / maxAqi) * 100;
+    return `<div class="zone-item">
+      <div>
+        <div class="zone-name">${STATION_NAMES[z.station_id] || z.station_id}</div>
+        <div class="zone-type">${z.zone_type}</div>
+        <div class="zone-bar-wrap"><div class="zone-bar" style="width:${barWidth}%;background:${barColor}"></div></div>
+      </div>
+      <div>
+        <div class="zone-aqi" style="color:${barColor}">${z.average_aqi.toFixed(0)}</div>
+        <div class="zone-diff" style="color:${diffColor}">${diffText}</div>
+      </div>
+    </div>`;
+  }
+
+  function draw() {
+    const visible = expanded ? sorted : sorted.slice(0, COLLAPSED);
+    document.getElementById('zone-list').innerHTML = visible.map(zoneRowHTML).join('');
+
+    const toggleEl = document.getElementById('zone-toggle');
+    toggleEl.innerHTML = '';
+    if (sorted.length > COLLAPSED) {
+      const btn = document.createElement('button');
+      btn.className = 'zone-toggle-btn';
+      btn.textContent = expanded ? `▲ Show top ${COLLAPSED} only` : `▼ Show all ${sorted.length} zones`;
+      btn.onclick = () => { expanded = !expanded; draw(); };
+      toggleEl.appendChild(btn);
+    }
+  }
+
+  draw();
+}
+
+function renderAdvisory(data) {
+  const zones = Object.values(data.zones || {}).filter(z => z && z.average_aqi);
+  const worstZone = zones.sort((a,b) => b.average_aqi - a.average_aqi)[0] || {};
+  const zoneName = STATION_NAMES[worstZone.station_id] || worstZone.station_id || 'Unknown';
+  const advisory = data.advisory;
+  const langs = advisory && advisory.messages ? Object.keys(advisory.messages) : ['en'];
+  let currentLang = 'en';
+
+  function draw() {
+    const msg = advisory && advisory.messages
+      ? (advisory.messages[currentLang] || advisory.messages['en'])
+      : `${data.tomorrow_category} AQI expected tomorrow. ${zoneName} shows highest pollution levels.`;
+
+    const langButtons = langs.map(l =>
+      `<button class="lang-btn ${l === currentLang ? 'active' : ''}" data-lang="${l}">${LANG_LABELS[l] || l}</button>`
+    ).join('');
+
+    document.getElementById('advisory-banner').innerHTML = `
+      <div class="advisory-icon">⚠️</div>
+      <div class="advisory-text">
+        <div class="advisory-header-row">
+          <b>${data.tomorrow_category} AQI expected tomorrow (${data.tomorrow_aqi.toFixed(0)})</b>
+          <div class="lang-switcher">${langButtons}</div>
+        </div>
+        <div class="advisory-msg">${msg}</div>
+        <div class="advisory-footnote">Auto-generated citizen health advisory · ${zoneName} (${(worstZone.zone_type||'').toLowerCase()}) flagged as highest-risk zone</div>
+      </div>`;
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.onclick = () => { currentLang = btn.dataset.lang; draw(); };
+    });
+  }
+
+  draw();
+}
+
+// Load real data from dashboard_data.json
+let ALL_DATA = null;
+let CURRENT_CITY = 'Delhi';
+
+function switchCity(city) {
+  CURRENT_CITY = city;
+  document.getElementById('city-label').textContent = city.toUpperCase();
+  document.querySelectorAll('.city-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.city === city);
+  });
+  document.getElementById('chart-city-name').textContent = city;
+  document.title = `${city} AQI Intelligence`;
+  render(ALL_DATA.cities[city]);
+}
+
+fetch('dashboard_data.json')
+  .then(r => r.json())
+  .then(data => {
+    ALL_DATA = data;
+    document.querySelectorAll('.city-btn').forEach(btn => {
+      btn.onclick = () => switchCity(btn.dataset.city);
+    });
+    render(ALL_DATA.cities['Delhi']);
+  })
+  .catch(e => {
+    console.error('Could not load dashboard_data.json:', e);
+    document.body.innerHTML += '<p style="color:red;padding:20px">Error loading dashboard_data.json</p>';
+  });
+</script>
+</body>
+</html>

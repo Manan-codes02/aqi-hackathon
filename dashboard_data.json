@@ -1,0 +1,1459 @@
+{
+  "cities": {
+    "Delhi": {
+      "city": "Delhi",
+      "current_aqi": 101.0,
+      "current_category": "Moderate",
+      "tomorrow_aqi": 65.0,
+      "tomorrow_category": "Satisfactory",
+      "advisory": {
+        "aqi": 65.0301517262518,
+        "category": "Satisfactory",
+        "color": "light green",
+        "messages": {
+          "en": "Air quality is acceptable. Sensitive individuals may experience minor discomfort.",
+          "hi": "\u0935\u093e\u092f\u0941 \u0917\u0941\u0923\u0935\u0924\u094d\u0924\u093e \u0938\u094d\u0935\u0940\u0915\u093e\u0930\u094d\u092f \u0939\u0948. \u0938\u0902\u0935\u0947\u0926\u0928\u0936\u0940\u0932 \u0935\u094d\u092f\u0915\u094d\u0924\u093f\u092f\u094b\u0902 \u0915\u094b \u0925\u094b\u0921\u093c\u0940 \u0905\u0938\u0941\u0935\u093f\u0927\u093e \u0915\u093e \u0905\u0928\u0941\u092d\u0935 \u0939\u094b \u0938\u0915\u0924\u093e \u0939\u0948\u0964",
+          "ta": "\u0b95\u0bbe\u0bb1\u0bcd\u0bb1\u0bbf\u0ba9\u0bcd \u0ba4\u0bb0\u0bae\u0bcd \u0b8f\u0bb1\u0bcd\u0bb1\u0bc1\u0b95\u0bcd\u0b95\u0bca\u0bb3\u0bcd\u0bb3\u0ba4\u0bcd\u0ba4\u0b95\u0bcd\u0b95\u0ba4\u0bc1. \u0b89\u0ba3\u0bb0\u0bcd\u0ba4\u0bbf\u0bb1\u0ba9\u0bcd \u0b95\u0bca\u0ba3\u0bcd\u0b9f \u0ba8\u0baa\u0bb0\u0bcd\u0b95\u0bb3\u0bcd \u0b9a\u0bbf\u0bb1\u0bbf\u0baf \u0b85\u0b9a\u0bcc\u0b95\u0bb0\u0bbf\u0baf\u0ba4\u0bcd\u0ba4\u0bc8 \u0b85\u0ba9\u0bc1\u0baa\u0bb5\u0bbf\u0b95\u0bcd\u0b95\u0bb2\u0bbe\u0bae\u0bcd.",
+          "kn": "\u0c97\u0cbe\u0cb3\u0cbf\u0caf \u0c97\u0cc1\u0ca3\u0cae\u0c9f\u0ccd\u0c9f \u0cb8\u0ccd\u0cb5\u0cc0\u0c95\u0cbe\u0cb0\u0cbe\u0cb0\u0ccd\u0cb9\u0cb5\u0cbe\u0c97\u0cbf\u0ca6\u0cc6. \u0cb8\u0cc2\u0c95\u0ccd\u0cb7\u0ccd\u0cae \u0cb5\u0ccd\u0caf\u0c95\u0ccd\u0ca4\u0cbf\u0c97\u0cb3\u0cc1 \u0cb8\u0ca3\u0ccd\u0ca3 \u0c85\u0cb8\u0ccd\u0cb5\u0cb8\u0ccd\u0ca5\u0ca4\u0cc6\u0caf\u0ca8\u0ccd\u0ca8\u0cc1 \u0c85\u0ca8\u0cc1\u0cad\u0cb5\u0cbf\u0cb8\u0cac\u0cb9\u0cc1\u0ca6\u0cc1.",
+          "pa": "\u0a39\u0a35\u0a3e \u0a26\u0a40 \u0a17\u0a41\u0a23\u0a35\u0a71\u0a24\u0a3e \u0a38\u0a35\u0a40\u0a15\u0a3e\u0a30\u0a2f\u0a4b\u0a17 \u0a39\u0a48. \u0a38\u0a70\u0a35\u0a47\u0a26\u0a28\u0a38\u0a3c\u0a40\u0a32 \u0a35\u0a3f\u0a05\u0a15\u0a24\u0a40\u0a06\u0a02 \u0a28\u0a42\u0a70 \u0a2e\u0a3e\u0a2e\u0a42\u0a32\u0a40 \u0a2c\u0a47\u0a05\u0a30\u0a3e\u0a2e\u0a40 \u0a26\u0a3e \u0a05\u0a28\u0a41\u0a2d\u0a35 \u0a39\u0a4b \u0a38\u0a15\u0a26\u0a3e \u0a39\u0a48\u0964"
+        }
+      },
+      "history": [
+        {
+          "date": "2020-04-03",
+          "aqi": 84.0
+        },
+        {
+          "date": "2020-04-04",
+          "aqi": 90.0
+        },
+        {
+          "date": "2020-04-05",
+          "aqi": 103.0
+        },
+        {
+          "date": "2020-04-06",
+          "aqi": 134.0
+        },
+        {
+          "date": "2020-04-07",
+          "aqi": 100.0
+        },
+        {
+          "date": "2020-04-08",
+          "aqi": 91.0
+        },
+        {
+          "date": "2020-04-09",
+          "aqi": 89.0
+        },
+        {
+          "date": "2020-04-10",
+          "aqi": 111.0
+        },
+        {
+          "date": "2020-04-11",
+          "aqi": 126.0
+        },
+        {
+          "date": "2020-04-12",
+          "aqi": 102.0
+        },
+        {
+          "date": "2020-04-13",
+          "aqi": 119.0
+        },
+        {
+          "date": "2020-04-14",
+          "aqi": 134.0
+        },
+        {
+          "date": "2020-04-15",
+          "aqi": 152.0
+        },
+        {
+          "date": "2020-04-16",
+          "aqi": 172.0
+        },
+        {
+          "date": "2020-04-17",
+          "aqi": 123.0
+        },
+        {
+          "date": "2020-04-18",
+          "aqi": 102.0
+        },
+        {
+          "date": "2020-04-19",
+          "aqi": 95.0
+        },
+        {
+          "date": "2020-04-20",
+          "aqi": 115.0
+        },
+        {
+          "date": "2020-04-21",
+          "aqi": 102.0
+        },
+        {
+          "date": "2020-04-22",
+          "aqi": 122.0
+        },
+        {
+          "date": "2020-04-23",
+          "aqi": 129.0
+        },
+        {
+          "date": "2020-04-24",
+          "aqi": 143.0
+        },
+        {
+          "date": "2020-04-25",
+          "aqi": 121.0
+        },
+        {
+          "date": "2020-04-26",
+          "aqi": 119.0
+        },
+        {
+          "date": "2020-04-27",
+          "aqi": 98.0
+        },
+        {
+          "date": "2020-04-28",
+          "aqi": 105.0
+        },
+        {
+          "date": "2020-04-29",
+          "aqi": 123.0
+        },
+        {
+          "date": "2020-04-30",
+          "aqi": 128.0
+        },
+        {
+          "date": "2020-05-01",
+          "aqi": 140.0
+        },
+        {
+          "date": "2020-05-02",
+          "aqi": 127.0
+        },
+        {
+          "date": "2020-05-03",
+          "aqi": 110.0
+        },
+        {
+          "date": "2020-05-04",
+          "aqi": 92.0
+        },
+        {
+          "date": "2020-05-05",
+          "aqi": 117.0
+        },
+        {
+          "date": "2020-05-06",
+          "aqi": 139.0
+        },
+        {
+          "date": "2020-05-07",
+          "aqi": 140.0
+        },
+        {
+          "date": "2020-05-08",
+          "aqi": 138.0
+        },
+        {
+          "date": "2020-05-09",
+          "aqi": 142.0
+        },
+        {
+          "date": "2020-05-10",
+          "aqi": 127.0
+        },
+        {
+          "date": "2020-05-11",
+          "aqi": 113.0
+        },
+        {
+          "date": "2020-05-12",
+          "aqi": 122.0
+        },
+        {
+          "date": "2020-05-13",
+          "aqi": 132.0
+        },
+        {
+          "date": "2020-05-14",
+          "aqi": 154.0
+        },
+        {
+          "date": "2020-05-15",
+          "aqi": 125.0
+        },
+        {
+          "date": "2020-05-16",
+          "aqi": 175.0
+        },
+        {
+          "date": "2020-05-17",
+          "aqi": 202.0
+        },
+        {
+          "date": "2020-05-18",
+          "aqi": 222.0
+        },
+        {
+          "date": "2020-05-19",
+          "aqi": 238.0
+        },
+        {
+          "date": "2020-05-20",
+          "aqi": 196.0
+        },
+        {
+          "date": "2020-05-21",
+          "aqi": 149.0
+        },
+        {
+          "date": "2020-05-22",
+          "aqi": 199.0
+        },
+        {
+          "date": "2020-05-23",
+          "aqi": 202.0
+        },
+        {
+          "date": "2020-05-24",
+          "aqi": 174.0
+        },
+        {
+          "date": "2020-05-25",
+          "aqi": 157.0
+        },
+        {
+          "date": "2020-05-26",
+          "aqi": 153.0
+        },
+        {
+          "date": "2020-05-27",
+          "aqi": 156.0
+        },
+        {
+          "date": "2020-05-28",
+          "aqi": 174.0
+        },
+        {
+          "date": "2020-05-29",
+          "aqi": 129.0
+        },
+        {
+          "date": "2020-05-30",
+          "aqi": 84.0
+        },
+        {
+          "date": "2020-05-31",
+          "aqi": 80.0
+        },
+        {
+          "date": "2020-06-01",
+          "aqi": 100.0
+        },
+        {
+          "date": "2020-06-02",
+          "aqi": 123.0
+        },
+        {
+          "date": "2020-06-03",
+          "aqi": 123.0
+        },
+        {
+          "date": "2020-06-04",
+          "aqi": 144.0
+        },
+        {
+          "date": "2020-06-05",
+          "aqi": 126.0
+        },
+        {
+          "date": "2020-06-06",
+          "aqi": 102.0
+        },
+        {
+          "date": "2020-06-07",
+          "aqi": 104.0
+        },
+        {
+          "date": "2020-06-08",
+          "aqi": 112.0
+        },
+        {
+          "date": "2020-06-09",
+          "aqi": 138.0
+        },
+        {
+          "date": "2020-06-10",
+          "aqi": 154.0
+        },
+        {
+          "date": "2020-06-11",
+          "aqi": 142.0
+        },
+        {
+          "date": "2020-06-12",
+          "aqi": 152.0
+        },
+        {
+          "date": "2020-06-13",
+          "aqi": 132.0
+        },
+        {
+          "date": "2020-06-14",
+          "aqi": 147.0
+        },
+        {
+          "date": "2020-06-15",
+          "aqi": 130.0
+        },
+        {
+          "date": "2020-06-16",
+          "aqi": 126.0
+        },
+        {
+          "date": "2020-06-17",
+          "aqi": 110.0
+        },
+        {
+          "date": "2020-06-18",
+          "aqi": 107.0
+        },
+        {
+          "date": "2020-06-19",
+          "aqi": 132.0
+        },
+        {
+          "date": "2020-06-20",
+          "aqi": 158.0
+        },
+        {
+          "date": "2020-06-21",
+          "aqi": 105.0
+        },
+        {
+          "date": "2020-06-22",
+          "aqi": 104.0
+        },
+        {
+          "date": "2020-06-23",
+          "aqi": 85.0
+        },
+        {
+          "date": "2020-06-24",
+          "aqi": 71.0
+        },
+        {
+          "date": "2020-06-25",
+          "aqi": 86.0
+        },
+        {
+          "date": "2020-06-26",
+          "aqi": 104.0
+        },
+        {
+          "date": "2020-06-27",
+          "aqi": 112.0
+        },
+        {
+          "date": "2020-06-28",
+          "aqi": 196.0
+        },
+        {
+          "date": "2020-06-29",
+          "aqi": 233.0
+        },
+        {
+          "date": "2020-06-30",
+          "aqi": 114.0
+        },
+        {
+          "date": "2020-07-01",
+          "aqi": 101.0
+        }
+      ],
+      "forecast": [
+        {
+          "date": "2020-07-02",
+          "aqi": 65.0,
+          "lower": 29.0,
+          "upper": 150.9
+        },
+        {
+          "date": "2020-07-03",
+          "aqi": 64.4,
+          "lower": 29.0,
+          "upper": 146.0
+        },
+        {
+          "date": "2020-07-04",
+          "aqi": 56.7,
+          "lower": 29.0,
+          "upper": 137.4
+        },
+        {
+          "date": "2020-07-05",
+          "aqi": 49.3,
+          "lower": 29.0,
+          "upper": 139.5
+        },
+        {
+          "date": "2020-07-06",
+          "aqi": 44.2,
+          "lower": 29.0,
+          "upper": 131.1
+        },
+        {
+          "date": "2020-07-07",
+          "aqi": 44.8,
+          "lower": 29.0,
+          "upper": 135.7
+        },
+        {
+          "date": "2020-07-08",
+          "aqi": 47.5,
+          "lower": 29.0,
+          "upper": 139.8
+        },
+        {
+          "date": "2020-07-09",
+          "aqi": 48.9,
+          "lower": 29.0,
+          "upper": 129.3
+        },
+        {
+          "date": "2020-07-10",
+          "aqi": 49.8,
+          "lower": 29.0,
+          "upper": 136.6
+        },
+        {
+          "date": "2020-07-11",
+          "aqi": 43.5,
+          "lower": 29.0,
+          "upper": 131.3
+        },
+        {
+          "date": "2020-07-12",
+          "aqi": 37.5,
+          "lower": 29.0,
+          "upper": 124.2
+        },
+        {
+          "date": "2020-07-13",
+          "aqi": 33.6,
+          "lower": 29.0,
+          "upper": 121.5
+        },
+        {
+          "date": "2020-07-14",
+          "aqi": 35.5,
+          "lower": 29.0,
+          "upper": 127.7
+        },
+        {
+          "date": "2020-07-15",
+          "aqi": 39.2,
+          "lower": 29.0,
+          "upper": 134.5
+        },
+        {
+          "date": "2020-07-16",
+          "aqi": 41.6,
+          "lower": 29.0,
+          "upper": 127.3
+        },
+        {
+          "date": "2020-07-17",
+          "aqi": 43.3,
+          "lower": 29.0,
+          "upper": 130.6
+        },
+        {
+          "date": "2020-07-18",
+          "aqi": 37.7,
+          "lower": 29.0,
+          "upper": 124.0
+        },
+        {
+          "date": "2020-07-19",
+          "aqi": 32.2,
+          "lower": 29.0,
+          "upper": 123.8
+        },
+        {
+          "date": "2020-07-20",
+          "aqi": 29.0,
+          "lower": 29.0,
+          "upper": 115.3
+        },
+        {
+          "date": "2020-07-21",
+          "aqi": 30.8,
+          "lower": 29.0,
+          "upper": 116.0
+        },
+        {
+          "date": "2020-07-22",
+          "aqi": 34.6,
+          "lower": 29.0,
+          "upper": 123.7
+        },
+        {
+          "date": "2020-07-23",
+          "aqi": 37.0,
+          "lower": 29.0,
+          "upper": 124.6
+        },
+        {
+          "date": "2020-07-24",
+          "aqi": 38.5,
+          "lower": 29.0,
+          "upper": 124.8
+        },
+        {
+          "date": "2020-07-25",
+          "aqi": 32.6,
+          "lower": 29.0,
+          "upper": 123.5
+        },
+        {
+          "date": "2020-07-26",
+          "aqi": 29.0,
+          "lower": 29.0,
+          "upper": 117.7
+        },
+        {
+          "date": "2020-07-27",
+          "aqi": 29.0,
+          "lower": 29.0,
+          "upper": 111.7
+        },
+        {
+          "date": "2020-07-28",
+          "aqi": 29.0,
+          "lower": 29.0,
+          "upper": 114.8
+        },
+        {
+          "date": "2020-07-29",
+          "aqi": 29.0,
+          "lower": 29.0,
+          "upper": 117.2
+        },
+        {
+          "date": "2020-07-30",
+          "aqi": 30.1,
+          "lower": 29.0,
+          "upper": 116.1
+        },
+        {
+          "date": "2020-07-31",
+          "aqi": 31.3,
+          "lower": 29.0,
+          "upper": 116.7
+        }
+      ],
+      "zones": {
+        "DL001": {
+          "station_id": "DL001",
+          "zone_type": "Residential",
+          "average_aqi": 217.8,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Residential) shows AQI close to the monitored-zone average."
+        },
+        "DL002": {
+          "station_id": "DL002",
+          "zone_type": "Traffic",
+          "average_aqi": 355.8,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Traffic) shows AQI 49.0% HIGHER than average \u2014 likely linked to traffic activity."
+        },
+        "DL004": {
+          "station_id": "DL004",
+          "zone_type": "Residential",
+          "average_aqi": 192.5,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Residential) shows AQI 19.4% LOWER than average \u2014 relatively cleaner zone."
+        },
+        "DL005": {
+          "station_id": "DL005",
+          "zone_type": "Industrial",
+          "average_aqi": 252.6,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Industrial) shows AQI close to the monitored-zone average."
+        },
+        "DL006": {
+          "station_id": "DL006",
+          "zone_type": "Residential",
+          "average_aqi": 232.0,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Residential) shows AQI close to the monitored-zone average."
+        },
+        "DL007": {
+          "station_id": "DL007",
+          "zone_type": "Institutional",
+          "average_aqi": 248.2,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Institutional) shows AQI close to the monitored-zone average."
+        },
+        "DL008": {
+          "station_id": "DL008",
+          "zone_type": "Institutional",
+          "average_aqi": 258.0,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Institutional) shows AQI close to the monitored-zone average."
+        },
+        "DL009": {
+          "station_id": "DL009",
+          "zone_type": "Institutional",
+          "average_aqi": 204.6,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Institutional) shows AQI 14.3% LOWER than average \u2014 relatively cleaner zone."
+        },
+        "DL010": {
+          "station_id": "DL010",
+          "zone_type": "Residential",
+          "average_aqi": 260.6,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Residential) shows AQI close to the monitored-zone average."
+        },
+        "DL011": {
+          "error": "Station DL011 not found"
+        },
+        "DL012": {
+          "station_id": "DL012",
+          "zone_type": "Traffic",
+          "average_aqi": 203.5,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Traffic) shows AQI 14.8% LOWER than average \u2014 relatively cleaner zone."
+        },
+        "DL013": {
+          "station_id": "DL013",
+          "zone_type": "Institutional",
+          "average_aqi": 226.0,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Institutional) shows AQI close to the monitored-zone average."
+        },
+        "DL014": {
+          "station_id": "DL014",
+          "zone_type": "Traffic",
+          "average_aqi": 230.7,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Traffic) shows AQI close to the monitored-zone average."
+        },
+        "DL015": {
+          "station_id": "DL015",
+          "zone_type": "Industrial",
+          "average_aqi": 260.9,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Industrial) shows AQI close to the monitored-zone average."
+        },
+        "DL016": {
+          "station_id": "DL016",
+          "zone_type": "Institutional",
+          "average_aqi": 218.9,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Institutional) shows AQI close to the monitored-zone average."
+        },
+        "DL017": {
+          "station_id": "DL017",
+          "zone_type": "Residential",
+          "average_aqi": 199.2,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Residential) shows AQI 16.6% LOWER than average \u2014 relatively cleaner zone."
+        },
+        "DL018": {
+          "station_id": "DL018",
+          "zone_type": "Institutional",
+          "average_aqi": 208.8,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Institutional) shows AQI 12.5% LOWER than average \u2014 relatively cleaner zone."
+        },
+        "DL019": {
+          "station_id": "DL019",
+          "zone_type": "Residential",
+          "average_aqi": 221.2,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Residential) shows AQI close to the monitored-zone average."
+        },
+        "DL020": {
+          "station_id": "DL020",
+          "zone_type": "Industrial",
+          "average_aqi": 269.1,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Industrial) shows AQI 12.7% HIGHER than average \u2014 likely linked to industrial activity."
+        },
+        "DL021": {
+          "station_id": "DL021",
+          "zone_type": "Institutional",
+          "average_aqi": 246.4,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Institutional) shows AQI close to the monitored-zone average."
+        },
+        "DL022": {
+          "station_id": "DL022",
+          "zone_type": "Industrial",
+          "average_aqi": 204.1,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Industrial) shows AQI 14.5% LOWER than average \u2014 relatively cleaner zone."
+        },
+        "DL023": {
+          "station_id": "DL023",
+          "zone_type": "Industrial",
+          "average_aqi": 237.6,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Industrial) shows AQI close to the monitored-zone average."
+        },
+        "DL024": {
+          "station_id": "DL024",
+          "zone_type": "Residential",
+          "average_aqi": 237.0,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Residential) shows AQI close to the monitored-zone average."
+        },
+        "DL025": {
+          "station_id": "DL025",
+          "zone_type": "Institutional",
+          "average_aqi": 234.5,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Institutional) shows AQI close to the monitored-zone average."
+        },
+        "DL026": {
+          "station_id": "DL026",
+          "zone_type": "Industrial",
+          "average_aqi": 217.4,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Industrial) shows AQI close to the monitored-zone average."
+        },
+        "DL027": {
+          "station_id": "DL027",
+          "zone_type": "Industrial",
+          "average_aqi": 202.5,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Industrial) shows AQI 15.2% LOWER than average \u2014 relatively cleaner zone."
+        },
+        "DL028": {
+          "station_id": "DL028",
+          "zone_type": "Traffic",
+          "average_aqi": 294.3,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Traffic) shows AQI 23.3% HIGHER than average \u2014 likely linked to traffic activity."
+        },
+        "DL029": {
+          "station_id": "DL029",
+          "zone_type": "Institutional",
+          "average_aqi": 214.5,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Institutional) shows AQI 10.2% LOWER than average \u2014 relatively cleaner zone."
+        },
+        "DL030": {
+          "station_id": "DL030",
+          "zone_type": "Institutional",
+          "average_aqi": 184.8,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Institutional) shows AQI 22.6% LOWER than average \u2014 relatively cleaner zone."
+        },
+        "DL031": {
+          "station_id": "DL031",
+          "zone_type": "Residential",
+          "average_aqi": 247.4,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Residential) shows AQI close to the monitored-zone average."
+        },
+        "DL032": {
+          "station_id": "DL032",
+          "zone_type": "Residential",
+          "average_aqi": 253.2,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Residential) shows AQI close to the monitored-zone average."
+        },
+        "DL033": {
+          "station_id": "DL033",
+          "zone_type": "Traffic",
+          "average_aqi": 235.1,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Traffic) shows AQI close to the monitored-zone average."
+        },
+        "DL034": {
+          "station_id": "DL034",
+          "zone_type": "Institutional",
+          "average_aqi": 257.9,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Institutional) shows AQI close to the monitored-zone average."
+        },
+        "DL035": {
+          "station_id": "DL035",
+          "zone_type": "Residential",
+          "average_aqi": 225.5,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Residential) shows AQI close to the monitored-zone average."
+        },
+        "DL036": {
+          "station_id": "DL036",
+          "zone_type": "Residential",
+          "average_aqi": 197.6,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Residential) shows AQI 17.2% LOWER than average \u2014 relatively cleaner zone."
+        },
+        "DL037": {
+          "station_id": "DL037",
+          "zone_type": "Residential",
+          "average_aqi": 234.5,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Residential) shows AQI close to the monitored-zone average."
+        },
+        "DL038": {
+          "station_id": "DL038",
+          "zone_type": "Industrial",
+          "average_aqi": 271.8,
+          "city_average_aqi": 238.7,
+          "insight": "This area (Industrial) shows AQI 13.8% HIGHER than average \u2014 likely linked to industrial activity."
+        }
+      }
+    },
+    "Bengaluru": {
+      "city": "Bengaluru",
+      "current_aqi": 43.0,
+      "current_category": "Good",
+      "tomorrow_aqi": 74.4,
+      "tomorrow_category": "Satisfactory",
+      "advisory": {
+        "aqi": 74.36821605487654,
+        "category": "Satisfactory",
+        "color": "light green",
+        "messages": {
+          "en": "Air quality is acceptable. Sensitive individuals may experience minor discomfort.",
+          "hi": "\u0935\u093e\u092f\u0941 \u0917\u0941\u0923\u0935\u0924\u094d\u0924\u093e \u0938\u094d\u0935\u0940\u0915\u093e\u0930\u094d\u092f \u0939\u0948. \u0938\u0902\u0935\u0947\u0926\u0928\u0936\u0940\u0932 \u0935\u094d\u092f\u0915\u094d\u0924\u093f\u092f\u094b\u0902 \u0915\u094b \u0925\u094b\u0921\u093c\u0940 \u0905\u0938\u0941\u0935\u093f\u0927\u093e \u0915\u093e \u0905\u0928\u0941\u092d\u0935 \u0939\u094b \u0938\u0915\u0924\u093e \u0939\u0948\u0964",
+          "ta": "\u0b95\u0bbe\u0bb1\u0bcd\u0bb1\u0bbf\u0ba9\u0bcd \u0ba4\u0bb0\u0bae\u0bcd \u0b8f\u0bb1\u0bcd\u0bb1\u0bc1\u0b95\u0bcd\u0b95\u0bca\u0bb3\u0bcd\u0bb3\u0ba4\u0bcd\u0ba4\u0b95\u0bcd\u0b95\u0ba4\u0bc1. \u0b89\u0ba3\u0bb0\u0bcd\u0ba4\u0bbf\u0bb1\u0ba9\u0bcd \u0b95\u0bca\u0ba3\u0bcd\u0b9f \u0ba8\u0baa\u0bb0\u0bcd\u0b95\u0bb3\u0bcd \u0b9a\u0bbf\u0bb1\u0bbf\u0baf \u0b85\u0b9a\u0bcc\u0b95\u0bb0\u0bbf\u0baf\u0ba4\u0bcd\u0ba4\u0bc8 \u0b85\u0ba9\u0bc1\u0baa\u0bb5\u0bbf\u0b95\u0bcd\u0b95\u0bb2\u0bbe\u0bae\u0bcd.",
+          "kn": "\u0c97\u0cbe\u0cb3\u0cbf\u0caf \u0c97\u0cc1\u0ca3\u0cae\u0c9f\u0ccd\u0c9f \u0cb8\u0ccd\u0cb5\u0cc0\u0c95\u0cbe\u0cb0\u0cbe\u0cb0\u0ccd\u0cb9\u0cb5\u0cbe\u0c97\u0cbf\u0ca6\u0cc6. \u0cb8\u0cc2\u0c95\u0ccd\u0cb7\u0ccd\u0cae \u0cb5\u0ccd\u0caf\u0c95\u0ccd\u0ca4\u0cbf\u0c97\u0cb3\u0cc1 \u0cb8\u0ca3\u0ccd\u0ca3 \u0c85\u0cb8\u0ccd\u0cb5\u0cb8\u0ccd\u0ca5\u0ca4\u0cc6\u0caf\u0ca8\u0ccd\u0ca8\u0cc1 \u0c85\u0ca8\u0cc1\u0cad\u0cb5\u0cbf\u0cb8\u0cac\u0cb9\u0cc1\u0ca6\u0cc1.",
+          "pa": "\u0a39\u0a35\u0a3e \u0a26\u0a40 \u0a17\u0a41\u0a23\u0a35\u0a71\u0a24\u0a3e \u0a38\u0a35\u0a40\u0a15\u0a3e\u0a30\u0a2f\u0a4b\u0a17 \u0a39\u0a48. \u0a38\u0a70\u0a35\u0a47\u0a26\u0a28\u0a38\u0a3c\u0a40\u0a32 \u0a35\u0a3f\u0a05\u0a15\u0a24\u0a40\u0a06\u0a02 \u0a28\u0a42\u0a70 \u0a2e\u0a3e\u0a2e\u0a42\u0a32\u0a40 \u0a2c\u0a47\u0a05\u0a30\u0a3e\u0a2e\u0a40 \u0a26\u0a3e \u0a05\u0a28\u0a41\u0a2d\u0a35 \u0a39\u0a4b \u0a38\u0a15\u0a26\u0a3e \u0a39\u0a48\u0964"
+        }
+      },
+      "history": [
+        {
+          "date": "2020-04-03",
+          "aqi": 82.0
+        },
+        {
+          "date": "2020-04-04",
+          "aqi": 74.0
+        },
+        {
+          "date": "2020-04-05",
+          "aqi": 77.0
+        },
+        {
+          "date": "2020-04-06",
+          "aqi": 65.0
+        },
+        {
+          "date": "2020-04-07",
+          "aqi": 62.0
+        },
+        {
+          "date": "2020-04-08",
+          "aqi": 67.0
+        },
+        {
+          "date": "2020-04-09",
+          "aqi": 65.0
+        },
+        {
+          "date": "2020-04-10",
+          "aqi": 76.0
+        },
+        {
+          "date": "2020-04-11",
+          "aqi": 70.0
+        },
+        {
+          "date": "2020-04-12",
+          "aqi": 64.0
+        },
+        {
+          "date": "2020-04-13",
+          "aqi": 72.0
+        },
+        {
+          "date": "2020-04-14",
+          "aqi": 72.0
+        },
+        {
+          "date": "2020-04-15",
+          "aqi": 74.0
+        },
+        {
+          "date": "2020-04-16",
+          "aqi": 66.0
+        },
+        {
+          "date": "2020-04-17",
+          "aqi": 74.0
+        },
+        {
+          "date": "2020-04-18",
+          "aqi": 94.0
+        },
+        {
+          "date": "2020-04-19",
+          "aqi": 67.0
+        },
+        {
+          "date": "2020-04-20",
+          "aqi": 53.0
+        },
+        {
+          "date": "2020-04-21",
+          "aqi": 65.0
+        },
+        {
+          "date": "2020-04-22",
+          "aqi": 71.0
+        },
+        {
+          "date": "2020-04-23",
+          "aqi": 63.0
+        },
+        {
+          "date": "2020-04-24",
+          "aqi": 69.0
+        },
+        {
+          "date": "2020-04-25",
+          "aqi": 66.0
+        },
+        {
+          "date": "2020-04-26",
+          "aqi": 61.0
+        },
+        {
+          "date": "2020-04-27",
+          "aqi": 59.0
+        },
+        {
+          "date": "2020-04-28",
+          "aqi": 71.0
+        },
+        {
+          "date": "2020-04-29",
+          "aqi": 62.0
+        },
+        {
+          "date": "2020-04-30",
+          "aqi": 61.0
+        },
+        {
+          "date": "2020-05-01",
+          "aqi": 74.0
+        },
+        {
+          "date": "2020-05-02",
+          "aqi": 72.0
+        },
+        {
+          "date": "2020-05-03",
+          "aqi": 71.0
+        },
+        {
+          "date": "2020-05-04",
+          "aqi": 79.0
+        },
+        {
+          "date": "2020-05-05",
+          "aqi": 91.0
+        },
+        {
+          "date": "2020-05-06",
+          "aqi": 85.0
+        },
+        {
+          "date": "2020-05-07",
+          "aqi": 82.0
+        },
+        {
+          "date": "2020-05-08",
+          "aqi": 73.0
+        },
+        {
+          "date": "2020-05-09",
+          "aqi": 76.0
+        },
+        {
+          "date": "2020-05-10",
+          "aqi": 78.0
+        },
+        {
+          "date": "2020-05-11",
+          "aqi": 77.0
+        },
+        {
+          "date": "2020-05-12",
+          "aqi": 82.0
+        },
+        {
+          "date": "2020-05-13",
+          "aqi": 66.0
+        },
+        {
+          "date": "2020-05-14",
+          "aqi": 66.0
+        },
+        {
+          "date": "2020-05-15",
+          "aqi": 73.0
+        },
+        {
+          "date": "2020-05-16",
+          "aqi": 74.0
+        },
+        {
+          "date": "2020-05-17",
+          "aqi": 70.0
+        },
+        {
+          "date": "2020-05-18",
+          "aqi": 68.0
+        },
+        {
+          "date": "2020-05-19",
+          "aqi": 72.0
+        },
+        {
+          "date": "2020-05-20",
+          "aqi": 79.0
+        },
+        {
+          "date": "2020-05-21",
+          "aqi": 70.0
+        },
+        {
+          "date": "2020-05-22",
+          "aqi": 68.0
+        },
+        {
+          "date": "2020-05-23",
+          "aqi": 72.0
+        },
+        {
+          "date": "2020-05-24",
+          "aqi": 66.0
+        },
+        {
+          "date": "2020-05-25",
+          "aqi": 70.0
+        },
+        {
+          "date": "2020-05-26",
+          "aqi": 66.0
+        },
+        {
+          "date": "2020-05-27",
+          "aqi": 75.0
+        },
+        {
+          "date": "2020-05-28",
+          "aqi": 74.0
+        },
+        {
+          "date": "2020-05-29",
+          "aqi": 66.0
+        },
+        {
+          "date": "2020-05-30",
+          "aqi": 72.0
+        },
+        {
+          "date": "2020-05-31",
+          "aqi": 61.0
+        },
+        {
+          "date": "2020-06-01",
+          "aqi": 49.0
+        },
+        {
+          "date": "2020-06-02",
+          "aqi": 40.0
+        },
+        {
+          "date": "2020-06-03",
+          "aqi": 42.0
+        },
+        {
+          "date": "2020-06-04",
+          "aqi": 43.0
+        },
+        {
+          "date": "2020-06-05",
+          "aqi": 55.0
+        },
+        {
+          "date": "2020-06-06",
+          "aqi": 55.0
+        },
+        {
+          "date": "2020-06-07",
+          "aqi": 55.0
+        },
+        {
+          "date": "2020-06-08",
+          "aqi": 55.0
+        },
+        {
+          "date": "2020-06-09",
+          "aqi": 58.0
+        },
+        {
+          "date": "2020-06-10",
+          "aqi": 70.0
+        },
+        {
+          "date": "2020-06-11",
+          "aqi": 59.0
+        },
+        {
+          "date": "2020-06-12",
+          "aqi": 49.0
+        },
+        {
+          "date": "2020-06-13",
+          "aqi": 50.0
+        },
+        {
+          "date": "2020-06-14",
+          "aqi": 49.0
+        },
+        {
+          "date": "2020-06-15",
+          "aqi": 47.0
+        },
+        {
+          "date": "2020-06-16",
+          "aqi": 55.0
+        },
+        {
+          "date": "2020-06-17",
+          "aqi": 57.0
+        },
+        {
+          "date": "2020-06-18",
+          "aqi": 65.0
+        },
+        {
+          "date": "2020-06-19",
+          "aqi": 65.0
+        },
+        {
+          "date": "2020-06-20",
+          "aqi": 56.0
+        },
+        {
+          "date": "2020-06-21",
+          "aqi": 52.0
+        },
+        {
+          "date": "2020-06-22",
+          "aqi": 49.0
+        },
+        {
+          "date": "2020-06-23",
+          "aqi": 56.0
+        },
+        {
+          "date": "2020-06-24",
+          "aqi": 63.0
+        },
+        {
+          "date": "2020-06-25",
+          "aqi": 63.0
+        },
+        {
+          "date": "2020-06-26",
+          "aqi": 58.0
+        },
+        {
+          "date": "2020-06-27",
+          "aqi": 51.0
+        },
+        {
+          "date": "2020-06-28",
+          "aqi": 61.0
+        },
+        {
+          "date": "2020-06-29",
+          "aqi": 65.0
+        },
+        {
+          "date": "2020-06-30",
+          "aqi": 63.0
+        },
+        {
+          "date": "2020-07-01",
+          "aqi": 43.0
+        }
+      ],
+      "forecast": [
+        {
+          "date": "2020-07-02",
+          "aqi": 74.4,
+          "lower": 28.1,
+          "upper": 117.6
+        },
+        {
+          "date": "2020-07-03",
+          "aqi": 77.1,
+          "lower": 33.8,
+          "upper": 120.4
+        },
+        {
+          "date": "2020-07-04",
+          "aqi": 79.4,
+          "lower": 37.8,
+          "upper": 120.4
+        },
+        {
+          "date": "2020-07-05",
+          "aqi": 78.1,
+          "lower": 34.7,
+          "upper": 117.7
+        },
+        {
+          "date": "2020-07-06",
+          "aqi": 76.5,
+          "lower": 31.3,
+          "upper": 120.9
+        },
+        {
+          "date": "2020-07-07",
+          "aqi": 78.6,
+          "lower": 37.8,
+          "upper": 124.6
+        },
+        {
+          "date": "2020-07-08",
+          "aqi": 77.2,
+          "lower": 34.5,
+          "upper": 122.1
+        },
+        {
+          "date": "2020-07-09",
+          "aqi": 74.9,
+          "lower": 29.7,
+          "upper": 116.1
+        },
+        {
+          "date": "2020-07-10",
+          "aqi": 76.3,
+          "lower": 31.0,
+          "upper": 121.4
+        },
+        {
+          "date": "2020-07-11",
+          "aqi": 77.3,
+          "lower": 33.9,
+          "upper": 123.8
+        },
+        {
+          "date": "2020-07-12",
+          "aqi": 74.8,
+          "lower": 32.6,
+          "upper": 119.7
+        },
+        {
+          "date": "2020-07-13",
+          "aqi": 72.1,
+          "lower": 27.9,
+          "upper": 116.3
+        },
+        {
+          "date": "2020-07-14",
+          "aqi": 73.2,
+          "lower": 29.6,
+          "upper": 118.2
+        },
+        {
+          "date": "2020-07-15",
+          "aqi": 71.0,
+          "lower": 27.2,
+          "upper": 113.1
+        },
+        {
+          "date": "2020-07-16",
+          "aqi": 68.0,
+          "lower": 21.0,
+          "upper": 113.8
+        },
+        {
+          "date": "2020-07-17",
+          "aqi": 68.8,
+          "lower": 24.2,
+          "upper": 112.2
+        },
+        {
+          "date": "2020-07-18",
+          "aqi": 69.3,
+          "lower": 24.7,
+          "upper": 113.1
+        },
+        {
+          "date": "2020-07-19",
+          "aqi": 66.6,
+          "lower": 22.1,
+          "upper": 108.6
+        },
+        {
+          "date": "2020-07-20",
+          "aqi": 63.8,
+          "lower": 20.0,
+          "upper": 105.3
+        },
+        {
+          "date": "2020-07-21",
+          "aqi": 64.9,
+          "lower": 20.0,
+          "upper": 103.7
+        },
+        {
+          "date": "2020-07-22",
+          "aqi": 62.7,
+          "lower": 20.0,
+          "upper": 105.8
+        },
+        {
+          "date": "2020-07-23",
+          "aqi": 60.0,
+          "lower": 21.2,
+          "upper": 106.8
+        },
+        {
+          "date": "2020-07-24",
+          "aqi": 61.1,
+          "lower": 20.0,
+          "upper": 105.3
+        },
+        {
+          "date": "2020-07-25",
+          "aqi": 62.1,
+          "lower": 20.0,
+          "upper": 108.6
+        },
+        {
+          "date": "2020-07-26",
+          "aqi": 59.9,
+          "lower": 20.0,
+          "upper": 103.5
+        },
+        {
+          "date": "2020-07-27",
+          "aqi": 57.6,
+          "lower": 20.0,
+          "upper": 101.7
+        },
+        {
+          "date": "2020-07-28",
+          "aqi": 59.3,
+          "lower": 20.0,
+          "upper": 101.3
+        },
+        {
+          "date": "2020-07-29",
+          "aqi": 57.8,
+          "lower": 20.0,
+          "upper": 101.0
+        },
+        {
+          "date": "2020-07-30",
+          "aqi": 55.7,
+          "lower": 20.0,
+          "upper": 100.8
+        },
+        {
+          "date": "2020-07-31",
+          "aqi": 57.5,
+          "lower": 20.0,
+          "upper": 98.8
+        }
+      ],
+      "zones": {
+        "KA002": {
+          "station_id": "KA002",
+          "zone_type": "Residential",
+          "average_aqi": 89.8,
+          "city_average_aqi": 91.7,
+          "insight": "This area (Residential) shows AQI close to the monitored-zone average."
+        },
+        "KA003": {
+          "station_id": "KA003",
+          "zone_type": "Industrial",
+          "average_aqi": 99.0,
+          "city_average_aqi": 91.7,
+          "insight": "This area (Industrial) shows AQI close to the monitored-zone average."
+        },
+        "KA004": {
+          "station_id": "KA004",
+          "zone_type": "Residential",
+          "average_aqi": 95.3,
+          "city_average_aqi": 91.7,
+          "insight": "This area (Residential) shows AQI close to the monitored-zone average."
+        },
+        "KA005": {
+          "station_id": "KA005",
+          "zone_type": "Traffic",
+          "average_aqi": 110.7,
+          "city_average_aqi": 91.7,
+          "insight": "This area (Traffic) shows AQI 20.7% HIGHER than average \u2014 likely linked to traffic activity."
+        },
+        "KA006": {
+          "station_id": "KA006",
+          "zone_type": "Traffic",
+          "average_aqi": 77.4,
+          "city_average_aqi": 91.7,
+          "insight": "This area (Traffic) shows AQI 15.6% LOWER than average \u2014 relatively cleaner zone."
+        },
+        "KA007": {
+          "station_id": "KA007",
+          "zone_type": "Residential",
+          "average_aqi": 83.6,
+          "city_average_aqi": 91.7,
+          "insight": "This area (Residential) shows AQI close to the monitored-zone average."
+        },
+        "KA008": {
+          "station_id": "KA008",
+          "zone_type": "Residential",
+          "average_aqi": 90.4,
+          "city_average_aqi": 91.7,
+          "insight": "This area (Residential) shows AQI close to the monitored-zone average."
+        },
+        "KA009": {
+          "station_id": "KA009",
+          "zone_type": "Industrial",
+          "average_aqi": 94.1,
+          "city_average_aqi": 91.7,
+          "insight": "This area (Industrial) shows AQI close to the monitored-zone average."
+        },
+        "KA010": {
+          "station_id": "KA010",
+          "zone_type": "Industrial",
+          "average_aqi": 68.3,
+          "city_average_aqi": 91.7,
+          "insight": "This area (Industrial) shows AQI 25.5% LOWER than average \u2014 relatively cleaner zone."
+        },
+        "KA011": {
+          "station_id": "KA011",
+          "zone_type": "Traffic",
+          "average_aqi": 95.0,
+          "city_average_aqi": 91.7,
+          "insight": "This area (Traffic) shows AQI close to the monitored-zone average."
+        }
+      }
+    }
+  }
+}

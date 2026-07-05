@@ -1,0 +1,37 @@
+StationId,StationName,Zone,AQI
+DL002,Anand Vihar,Traffic,355.8
+DL028,Punjabi Bagh,Traffic,294.3
+DL038,Wazirpur,Industrial,271.8
+DL020,Mundka,Industrial,269.1
+DL015,Jahangirpuri,Industrial,260.9
+DL010,Dwarka Sector 8,Residential,260.6
+DL008,DTU,Institutional,258.0
+DL034,Sirifort,Institutional,257.9
+DL032,Rohini,Residential,253.2
+DL005,Bawana,Industrial,252.6
+DL007,CRRI Mathura Road,Institutional,248.2
+DL031,R K Puram,Residential,247.4
+DL021,NSIT Dwarka,Institutional,246.4
+DL023,Narela,Industrial,237.6
+DL024,Nehru Nagar,Residential,237.0
+DL033,Shadipur,Traffic,235.1
+DL037,Vivek Vihar,Residential,234.5
+DL025,North Campus DU,Institutional,234.5
+DL006,Burari Crossing,Residential,232.0
+DL014,ITO,Traffic,230.7
+DL013,IHBAS Dilshad Garden,Institutional,226.0
+DL035,Sonia Vihar,Residential,225.5
+DL019,Mandir Marg,Residential,221.2
+DL016,JLN Stadium,Institutional,218.9
+DL001,Alipur,Residential,217.8
+DL026,Okhla Phase-2,Industrial,217.4
+DL029,Pusa DPCC,Institutional,214.5
+DL018,Major Dhyan Chand Stadium,Institutional,208.8
+DL009,Dr. Karni Singh Range,Institutional,204.6
+DL022,Najafgarh,Industrial,204.1
+DL012,IGI Airport T3,Traffic,203.5
+DL027,Patparganj,Industrial,202.5
+DL017,Lodhi Road,Residential,199.2
+DL036,Sri Aurobindo Marg,Residential,197.6
+DL004,Aya Nagar,Residential,192.5
+DL030,Pusa IMD,Institutional,184.8

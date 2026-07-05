@@ -1,0 +1,11 @@
+StationId,StationName,Zone,AQI
+KA005,City Railway Station,Traffic,110.7
+KA003,BWSSB Kadabesanahalli,Industrial,99.0
+KA004,Bapuji Nagar,Residential,95.3
+KA011,Silk Board,Traffic,95.0
+KA009,Peenya,Industrial,94.1
+KA008,Jayanagar 5th Block,Residential,90.4
+KA002,BTM Layout,Residential,89.8
+KA007,Hombegowda Nagar,Residential,83.6
+KA006,Hebbal,Traffic,77.4
+KA010,Sanegurava Halli,Industrial,68.3
