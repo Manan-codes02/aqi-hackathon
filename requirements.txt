@@ -1,0 +1,8 @@
+pandas
+prophet
+scikit-learn
+matplotlib
+seaborn
+deep-translator
+numpy
+requests
